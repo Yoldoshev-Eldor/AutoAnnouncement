@@ -1,55 +1,66 @@
-# Prerequisites
-*.d
+# Ignore all bin/ and obj/ folders recursively
+**/[Bb]in/
+**/[Oo]bj/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Don't ignore solution or project files
+# (Remove these lines to keep them in Git)
+# **/*.csproj
+# **/*.sln
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Ignore user-specific and IDE-related files recursively
+**/*.user
+**/*.suo
+**/*.vspx
+**/*.vsmdi
+.vs/
+.vscode/
+.idea/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Ignore packages, build artifacts and NuGet outputs
+packages/
+**/packages/
+**/*.nupkg
+**/artifacts/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Ignore test results
+TestResults/
+**/*.trx
+**/*.coverage
+**/*.testsettings
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Ignore local DB files
+**/*.db
+**/*.sqlite
+**/*.sqlite3
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Ignore design and media files
+Design/
+**/*.psd
+**/*.ai
+**/*.xd
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Ignore Xamarin/MAUI/Android/iOS output files
+**/*.apk
+**/*.aab
+**/*.ipa
+**/*.dll
+**/*.pdb
+**/*.so
+**/*.jar
+**/*.dex
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Ignore temp, backup, and system files
+**/*~
+**/*.tmp
+**/*.bak
+**/*.swp
+**/*.swo
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
-# debug information files
-*.dwo
+# Ignore environment and config secrets
+.env
+.env.*
+secrets.json
+appsettings.*.local.json
