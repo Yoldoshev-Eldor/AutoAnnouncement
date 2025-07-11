@@ -1,4 +1,4 @@
-namespace WebApplication1
+namespace AutoAnnouncement.Server
 {
     public class WeatherForecast
     {
