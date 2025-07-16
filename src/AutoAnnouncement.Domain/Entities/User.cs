@@ -1,6 +1,4 @@
-﻿using AutoAnnouncement.Domain.Entities.Enums;
-
-namespace AutoAnnouncement.Domain.Entities;
+﻿namespace AutoAnnouncement.Domain.Entities;
 
 public class User
 {
@@ -12,7 +10,8 @@ public class User
     public string Password { get; set; }
     public string PhoneNumber { get; set; }
     public string Salt { get; set; }
-    public kk Role { get; set; }
+    public UserRole Role { get; set; }
     public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
+    public ICollection<Announcement> Announcements { get; set; } = new List<Announcement>();
 
 }
