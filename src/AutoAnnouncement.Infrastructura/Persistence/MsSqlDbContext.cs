@@ -1,4 +1,5 @@
 ﻿using AutoAnnouncement.Domain.Entities;
+using AutoAnnouncement.Infrastructure.Persistence.Configurations.MsSql;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ public class MsSqlDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Fluent config if needed
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
+
     }
 }

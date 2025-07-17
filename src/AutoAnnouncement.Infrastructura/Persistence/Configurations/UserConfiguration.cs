@@ -8,24 +8,33 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
+        builder.ToTable("Users");
+
         builder.HasKey(u => u.UserId);
 
-        builder.Property(u => u.FirstName).IsRequired().HasMaxLength(50);
-        builder.Property(u => u.LastName).IsRequired().HasMaxLength(50);
-        builder.Property(u => u.UserName).IsRequired().HasMaxLength(50);
-        builder.Property(u => u.Email).IsRequired().HasMaxLength(100);
-        builder.Property(u => u.Password).IsRequired();
-        builder.Property(u => u.Salt).IsRequired();
-        builder.Property(u => u.PhoneNumber).IsRequired().HasMaxLength(20);
-        builder.Property(u => u.Role).IsRequired();
+        builder.Property(u => u.FirstName)
+            .IsRequired()
+            .HasMaxLength(100);
 
-        // 1 user → ko‘p refresh token
-        builder.HasMany(u => u.RefreshTokens)
-               .WithOne()
-               .HasForeignKey("UserId")
-               .OnDelete(DeleteBehavior.Cascade);
+        builder.Property(u => u.LastName)
+            .IsRequired()
+            .HasMaxLength(100);
 
-        // Announcement navigatsiya mavjud bo‘lsa ham, boshqa DBda bo‘lgani uchun ignore qilamiz
-        builder.Ignore(u => u.Announcements);
+        builder.Property(u => u.UserName)
+            .IsRequired()
+            .HasMaxLength(50);
+
+        builder.Property(u => u.Email)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(u => u.Password)
+            .IsRequired();
+
+        builder.Property(u => u.Salt)
+            .IsRequired();
+
+        builder.Property(u => u.PhoneNumber)
+            .HasMaxLength(20);
     }
 }

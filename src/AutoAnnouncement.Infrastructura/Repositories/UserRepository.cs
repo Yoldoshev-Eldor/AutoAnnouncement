@@ -19,9 +19,9 @@ public class UserRepository : IUserRepository
         MsSqlDbContext = mainDbContext;
     }
 
-    public async Task<User> SelectUserByUserNameAsync(string userName)
+    public async Task<User> SelectUserByPhoneAsync(string phoneNumber)
     {
-        var user = await MsSqlDbContext.Users.FirstOrDefaultAsync(u => u.UserName == userName);
+        var user = await MsSqlDbContext.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
         if (user == null)
         {
             throw new Exception($"Entity with userName : {user} not found");

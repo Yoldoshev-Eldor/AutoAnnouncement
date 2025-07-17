@@ -29,7 +29,7 @@ public class AuthService : IAuthService
 
     public async Task<LoginResponseDto> LoginUserAsync(UserLoginDto userLoginDto)
     {
-        var user = await UserRepository.SelectUserByUserNameAsync(userLoginDto.UserName);
+        var user = await UserRepository.SelectUserByPhoneAsync(userLoginDto.PhoneNumber);
 
         var checkUserPassword = PasswordHasher.Verify(userLoginDto.Password, user.Password, user.Salt);
 

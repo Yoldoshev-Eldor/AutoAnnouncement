@@ -1,4 +1,6 @@
 ﻿using AutoAnnouncement.Domain.Entities;
+using AutoAnnouncement.Infrastructure.Persistence.Configurations.MsSql;
+using AutoAnnouncement.Infrastructure.Persistence.Configurations.Postgres;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,8 @@ public class PostgresDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Fluent config if needed
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfiguration(new AnnouncementConfiguration());
+        modelBuilder.ApplyConfiguration(new PhotoConfiguration());
     }
 }

@@ -1,4 +1,6 @@
 
+using AutoAnnouncement.Server.Configurations;
+
 namespace AutoAnnouncement.Server
 {
     public class Program
@@ -13,6 +15,9 @@ namespace AutoAnnouncement.Server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Configure();
+            builder.Configuration();
+            builder.ConfigurationJwtAuth();
 
             var app = builder.Build();
 
