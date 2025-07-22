@@ -9,6 +9,9 @@ namespace AutoAnnouncement.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.ConfigureSerilog();
+
+
             // Add services to the container.
 
             builder.Services.AddControllers();

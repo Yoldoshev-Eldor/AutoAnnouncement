@@ -2,6 +2,7 @@
 using AutoAnnouncement.Aplication.Helpers;
 using AutoAnnouncement.Aplication.Helpers.Security;
 using AutoAnnouncement.Aplication.Interfaces;
+using AutoAnnouncement.Aplication.Validators;
 using AutoAnnouncement.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -132,6 +133,12 @@ public class AuthService : IAuthService
 
     public async Task<long> SignUpUserAsync(UserCreateDto userCreateDto)
     {
+        var validator = new UserCreateDtoValidator(); 
+        var validationResult = validator.Validate(userCreateDto); 
+        if (!validationResult.IsValid)
+        {
+            throw new Exception($"{validationResult.Errors}");
+        }
         var tupleFromHasher = PasswordHasher.Hasher(userCreateDto.Password);
         var user = new User()
         {
