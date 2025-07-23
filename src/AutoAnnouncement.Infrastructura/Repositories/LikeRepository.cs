@@ -43,7 +43,7 @@ public class LikeRepository : ILikeRepository
             .ToListAsync();
     }
 
-    public async Task<Like?> GetByIdAsync(long id)
+    public async Task<Like> GetByIdAsync(long id)
     {
         return await _context.Likes.FindAsync(id);
     }
