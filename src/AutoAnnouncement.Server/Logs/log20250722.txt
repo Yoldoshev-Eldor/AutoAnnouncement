@@ -1,0 +1,571 @@
+2025-07-22 15:54:51.026 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-22 15:54:51.876 +05:00 [DBG] Hosting starting
+2025-07-22 15:54:51.988 +05:00 [INF] User profile is available. Using 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-22 15:54:52.012 +05:00 [DBG] Reading data from file 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys\key-a1d760c9-a3cb-4c62-ab16-ac81b7c585df.xml'.
+2025-07-22 15:54:52.042 +05:00 [DBG] Found key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df}.
+2025-07-22 15:54:52.059 +05:00 [DBG] Considering key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} with expiration date 2025-08-09 13:40:35Z as default key.
+2025-07-22 15:54:52.066 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 15:54:52.071 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-07-22 15:54:52.075 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 15:54:52.109 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-07-22 15:54:52.111 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-07-22 15:54:52.113 +05:00 [DBG] Using key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} as the default key.
+2025-07-22 15:54:52.115 +05:00 [DBG] Key ring with default key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} was loaded during application startup.
+2025-07-22 15:54:52.129 +05:00 [DBG] Middleware loaded
+2025-07-22 15:54:52.137 +05:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16531 B).
+2025-07-22 15:54:52.139 +05:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-07-22 15:54:52.962 +05:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-07-22 15:54:53.417 +05:00 [INF] Now listening on: https://localhost:7035
+2025-07-22 15:54:53.417 +05:00 [DBG] Connection id "0HNE91OO5CLAL" received FIN.
+2025-07-22 15:54:53.419 +05:00 [INF] Now listening on: http://localhost:5262
+2025-07-22 15:54:53.419 +05:00 [DBG] Loaded hosting startup assembly AutoAnnouncement.Server
+2025-07-22 15:54:53.419 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-07-22 15:54:53.419 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-07-22 15:54:53.419 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-07-22 15:54:53.441 +05:00 [DBG] Connection id "0HNE91OO5CLAL" accepted.
+2025-07-22 15:54:53.470 +05:00 [DBG] Connection id "0HNE91OO5CLAL" started.
+2025-07-22 15:54:53.560 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-07-22 15:54:53.692 +05:00 [DBG] Connection id "0HNE91OO5CLAL" stopped.
+2025-07-22 15:54:53.708 +05:00 [DBG] Connection id "0HNE91OO5CLAL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 15:54:54.029 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-22 15:54:54.029 +05:00 [INF] Hosting environment: Development
+2025-07-22 15:54:54.030 +05:00 [INF] Content root path: D:\ExamProject_M8\AutoAnnouncement\src\AutoAnnouncement.Server
+2025-07-22 15:54:54.030 +05:00 [DBG] Hosting started
+2025-07-22 15:54:54.829 +05:00 [DBG] Connection id "0HNE91OO5CLAM" accepted.
+2025-07-22 15:54:54.844 +05:00 [DBG] Connection id "0HNE91OO5CLAM" started.
+2025-07-22 15:54:55.244 +05:00 [DBG] Connection 0HNE91OO5CLAM established using the following protocol: "Tls12"
+2025-07-22 15:54:55.457 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/index.html - null null
+2025-07-22 15:54:55.875 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-07-22 15:54:55.974 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-07-22 15:54:55.975 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 15:54:56.139 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-07-22 15:54:56.142 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-07-22 15:54:56.257 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-07-22 15:54:56.258 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-07-22 15:54:56.269 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/index.html - 200 null text/html;charset=utf-8 831.5336ms
+2025-07-22 15:54:56.341 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_vs/browserLink - null null
+2025-07-22 15:54:56.446 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-22 15:54:56.476 +05:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-07-22 15:54:56.477 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 31.5811ms
+2025-07-22 15:54:56.693 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_vs/browserLink - 200 null text/javascript; charset=UTF-8 351.7252ms
+2025-07-22 15:54:56.792 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - null null
+2025-07-22 15:54:56.796 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-07-22 15:54:56.796 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 15:54:56.902 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 109.8238ms
+2025-07-22 15:55:01.024 +05:00 [DBG] Connection id "0HNE91OO5CLAM" received FIN.
+2025-07-22 15:55:01.048 +05:00 [DBG] Connection id "0HNE91OO5CLAM" is closed. The last processed stream ID was 7.
+2025-07-22 15:55:01.048 +05:00 [DBG] Connection id "0HNE91OO5CLAM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 15:55:01.054 +05:00 [DBG] The connection queue processing loop for 0HNE91OO5CLAM completed.
+2025-07-22 15:55:01.056 +05:00 [DBG] Connection id "0HNE91OO5CLAM" stopped.
+2025-07-22 16:20:44.501 +05:00 [DBG] Connection id "0HNE91OO5CLAN" accepted.
+2025-07-22 16:20:44.509 +05:00 [DBG] Connection id "0HNE91OO5CLAN" started.
+2025-07-22 16:20:44.543 +05:00 [DBG] Connection 0HNE91OO5CLAN established using the following protocol: "Tls12"
+2025-07-22 16:20:44.549 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:20:44.554 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:20:44.554 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:20:44.560 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:20:44.699 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:20:44.704 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:20:44.704 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:20:44.706 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:20:44.707 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 159.5494ms
+2025-07-22 16:20:44.712 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 147
+2025-07-22 16:20:44.714 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:20:44.714 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:20:44.714 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:20:44.716 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:20:44.716 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:20:44.717 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:20:44.717 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:20:44.718 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 6.7476ms
+2025-07-22 16:20:44.720 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:20:44.722 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000003": started reading request body.
+2025-07-22 16:20:44.723 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000003": done reading request body.
+2025-07-22 16:21:15.851 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:21:15.852 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:21:15.853 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:21:15.858 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:21:15.865 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:21:15.866 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:21:15.866 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:21:15.866 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:21:15.866 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 15.9072ms
+2025-07-22 16:21:15.869 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 151
+2025-07-22 16:21:15.874 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:21:15.875 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:21:15.876 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:21:15.876 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:21:15.880 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:21:15.880 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:21:15.880 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:21:15.881 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 12.1701ms
+2025-07-22 16:21:15.881 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:21:15.881 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000007": started reading request body.
+2025-07-22 16:21:15.881 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000007": done reading request body.
+2025-07-22 16:23:55.941 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:23:55.943 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:23:55.943 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:23:55.943 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:23:55.943 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:23:55.944 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:23:55.944 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:23:55.944 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:23:55.947 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 9.509ms
+2025-07-22 16:23:55.957 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:23:55.962 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:23:55.963 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:23:55.963 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:23:55.964 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:23:55.964 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:23:55.964 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:23:55.964 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:23:55.965 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 7.9482ms
+2025-07-22 16:23:55.965 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:23:55.965 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000000B": started reading request body.
+2025-07-22 16:23:55.965 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000000B": done reading request body.
+2025-07-22 16:25:28.416 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:25:28.417 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:25:28.417 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:25:28.417 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:25:28.429 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:25:28.433 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:25:28.433 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:25:28.433 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:25:28.434 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 17.4308ms
+2025-07-22 16:25:28.449 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:25:28.450 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:25:28.450 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:25:28.450 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:25:28.450 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:25:28.451 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:25:28.451 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:25:28.451 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:25:28.451 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 2.5152ms
+2025-07-22 16:25:28.452 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:25:28.452 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000000F": started reading request body.
+2025-07-22 16:25:28.452 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000000F": done reading request body.
+2025-07-22 16:26:09.560 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:26:09.569 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:09.569 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:09.569 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:26:09.574 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:09.576 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:09.576 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:09.576 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:26:09.580 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 16.947ms
+2025-07-22 16:26:09.606 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:26:09.607 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:09.607 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:09.607 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:09.608 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:09.608 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:09.608 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:09.608 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:09.609 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 2.0805ms
+2025-07-22 16:26:09.609 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:26:09.609 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000013": started reading request body.
+2025-07-22 16:26:09.609 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000013": done reading request body.
+2025-07-22 16:26:52.424 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:26:52.425 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:52.425 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:52.425 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:26:52.425 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:52.426 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:52.426 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:52.427 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:26:52.428 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 3.8116ms
+2025-07-22 16:26:52.449 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:26:52.449 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:52.456 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:52.457 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:52.459 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:52.459 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:52.460 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:52.460 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:52.460 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 11.4632ms
+2025-07-22 16:26:52.460 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:26:52.460 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000017": started reading request body.
+2025-07-22 16:26:52.460 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000017": done reading request body.
+2025-07-22 16:26:54.628 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:26:54.630 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:54.630 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:54.630 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:54.630 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:54.631 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:54.631 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:54.631 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:54.631 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 3.9331ms
+2025-07-22 16:26:54.632 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:26:54.632 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000019": started reading request body.
+2025-07-22 16:26:54.632 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000019": done reading request body.
+2025-07-22 16:26:54.922 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:26:54.923 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:54.923 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:54.923 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:54.924 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:54.924 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:54.924 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:54.924 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:54.924 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 1.8172ms
+2025-07-22 16:26:54.924 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:26:54.924 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000001B": started reading request body.
+2025-07-22 16:26:54.924 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000001B": done reading request body.
+2025-07-22 16:26:55.874 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 150
+2025-07-22 16:26:55.875 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:26:55.875 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:26:55.875 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:55.875 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:26:55.876 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:26:55.876 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:26:55.876 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:26:55.876 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 8.6069ms
+2025-07-22 16:26:55.876 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:26:55.877 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000001D": started reading request body.
+2025-07-22 16:26:55.877 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:0000001D": done reading request body.
+2025-07-22 16:27:34.976 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:27:34.981 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:27:34.982 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:27:34.983 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:27:34.983 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:27:34.983 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:27:34.983 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:27:34.983 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:27:34.987 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 7.6507ms
+2025-07-22 16:27:34.996 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 141
+2025-07-22 16:27:34.997 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:27:34.997 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:27:34.997 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:27:34.997 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:27:34.997 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:27:34.998 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:27:34.998 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:27:34.998 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 1.9644ms
+2025-07-22 16:27:34.998 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:27:34.998 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000021": started reading request body.
+2025-07-22 16:27:34.999 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000021": done reading request body.
+2025-07-22 16:28:58.440 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 16:28:58.440 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:28:58.440 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:28:58.440 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 16:28:58.440 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:28:58.441 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:28:58.441 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:28:58.441 +05:00 [DBG] The request is a preflight request.
+2025-07-22 16:28:58.441 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 4.1157ms
+2025-07-22 16:28:58.455 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 138
+2025-07-22 16:28:58.464 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 16:28:58.464 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 16:28:58.464 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:28:58.464 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 16:28:58.464 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 16:28:58.465 +05:00 [INF] CORS policy execution successful.
+2025-07-22 16:28:58.465 +05:00 [DBG] POST requests are not supported
+2025-07-22 16:28:58.465 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 10.8171ms
+2025-07-22 16:28:58.465 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 16:28:58.465 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000025": started reading request body.
+2025-07-22 16:28:58.466 +05:00 [DBG] Connection id "0HNE91OO5CLAN", Request id "0HNE91OO5CLAN:00000025": done reading request body.
+2025-07-22 16:28:59.392 +05:00 [DBG] Connection id "0HNE91OO5CLAN" received FIN.
+2025-07-22 16:28:59.397 +05:00 [DBG] Connection id "0HNE91OO5CLAN" is closed. The last processed stream ID was 37.
+2025-07-22 16:28:59.398 +05:00 [DBG] Connection id "0HNE91OO5CLAN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 16:28:59.400 +05:00 [DBG] The connection queue processing loop for 0HNE91OO5CLAN completed.
+2025-07-22 16:28:59.401 +05:00 [DBG] Connection id "0HNE91OO5CLAN" stopped.
+2025-07-22 17:29:03.927 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-22 17:29:05.141 +05:00 [DBG] Hosting starting
+2025-07-22 17:29:05.259 +05:00 [INF] User profile is available. Using 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-22 17:29:05.281 +05:00 [DBG] Reading data from file 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys\key-a1d760c9-a3cb-4c62-ab16-ac81b7c585df.xml'.
+2025-07-22 17:29:05.304 +05:00 [DBG] Found key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df}.
+2025-07-22 17:29:05.342 +05:00 [DBG] Considering key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} with expiration date 2025-08-09 13:40:35Z as default key.
+2025-07-22 17:29:05.372 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 17:29:05.379 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-07-22 17:29:05.383 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 17:29:05.401 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-07-22 17:29:05.404 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-07-22 17:29:05.409 +05:00 [DBG] Using key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} as the default key.
+2025-07-22 17:29:05.411 +05:00 [DBG] Key ring with default key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} was loaded during application startup.
+2025-07-22 17:29:05.437 +05:00 [DBG] Middleware loaded
+2025-07-22 17:29:05.440 +05:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16531 B).
+2025-07-22 17:29:05.442 +05:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-07-22 17:29:06.272 +05:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-07-22 17:29:06.980 +05:00 [DBG] Connection id "0HNE93DD1V4CT" received FIN.
+2025-07-22 17:29:07.094 +05:00 [DBG] Connection id "0HNE93DD1V4CU" received FIN.
+2025-07-22 17:29:07.186 +05:00 [DBG] Connection id "0HNE93DD1V4CT" accepted.
+2025-07-22 17:29:07.186 +05:00 [DBG] Connection id "0HNE93DD1V4CU" accepted.
+2025-07-22 17:29:07.191 +05:00 [DBG] Connection id "0HNE93DD1V4CU" started.
+2025-07-22 17:29:07.191 +05:00 [DBG] Connection id "0HNE93DD1V4CT" started.
+2025-07-22 17:29:07.193 +05:00 [INF] Now listening on: https://localhost:7035
+2025-07-22 17:29:07.193 +05:00 [INF] Now listening on: http://localhost:5262
+2025-07-22 17:29:07.193 +05:00 [DBG] Loaded hosting startup assembly AutoAnnouncement.Server
+2025-07-22 17:29:07.194 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-07-22 17:29:07.194 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-07-22 17:29:07.194 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-07-22 17:29:07.393 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-07-22 17:29:07.248 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-07-22 17:29:07.539 +05:00 [DBG] Connection id "0HNE93DD1V4CT" stopped.
+2025-07-22 17:29:07.539 +05:00 [DBG] Connection id "0HNE93DD1V4CU" stopped.
+2025-07-22 17:29:07.551 +05:00 [DBG] Connection id "0HNE93DD1V4CU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 17:29:07.553 +05:00 [DBG] Connection id "0HNE93DD1V4CT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 17:29:08.051 +05:00 [DBG] Connection id "0HNE93DD1V4CV" accepted.
+2025-07-22 17:29:08.244 +05:00 [DBG] Connection id "0HNE93DD1V4CV" started.
+2025-07-22 17:29:08.681 +05:00 [DBG] Connection 0HNE93DD1V4CV established using the following protocol: "Tls12"
+2025-07-22 17:29:09.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/index.html - null null
+2025-07-22 17:29:10.060 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-22 17:29:10.061 +05:00 [INF] Hosting environment: Development
+2025-07-22 17:29:10.061 +05:00 [INF] Content root path: D:\ExamProject_M8\AutoAnnouncement\src\AutoAnnouncement.Server
+2025-07-22 17:29:10.061 +05:00 [DBG] Hosting started
+2025-07-22 17:29:10.270 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-07-22 17:29:10.394 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-07-22 17:29:10.401 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 17:29:10.786 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-07-22 17:29:10.789 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-07-22 17:29:11.433 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-07-22 17:29:11.435 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-07-22 17:29:11.452 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/index.html - 200 null text/html;charset=utf-8 2085.9544ms
+2025-07-22 17:29:11.664 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-22 17:29:11.797 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_vs/browserLink - null null
+2025-07-22 17:29:11.808 +05:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-07-22 17:29:11.817 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 153.6254ms
+2025-07-22 17:29:12.426 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_vs/browserLink - 200 null text/javascript; charset=UTF-8 629.5254ms
+2025-07-22 17:29:12.658 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - null null
+2025-07-22 17:29:12.662 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-07-22 17:29:12.662 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 17:29:12.744 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 86.2867ms
+2025-07-22 18:15:29.295 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-22 18:15:30.056 +05:00 [DBG] Hosting starting
+2025-07-22 18:15:30.088 +05:00 [INF] User profile is available. Using 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-22 18:15:30.110 +05:00 [DBG] Reading data from file 'C:\Users\yoldo\AppData\Local\ASP.NET\DataProtection-Keys\key-a1d760c9-a3cb-4c62-ab16-ac81b7c585df.xml'.
+2025-07-22 18:15:30.348 +05:00 [DBG] Found key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df}.
+2025-07-22 18:15:30.380 +05:00 [DBG] Considering key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} with expiration date 2025-08-09 13:40:35Z as default key.
+2025-07-22 18:15:30.388 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 18:15:30.395 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-07-22 18:15:30.399 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-22 18:15:30.409 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-07-22 18:15:30.411 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-07-22 18:15:30.415 +05:00 [DBG] Using key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} as the default key.
+2025-07-22 18:15:30.416 +05:00 [DBG] Key ring with default key {a1d760c9-a3cb-4c62-ab16-ac81b7c585df} was loaded during application startup.
+2025-07-22 18:15:30.431 +05:00 [DBG] Middleware loaded
+2025-07-22 18:15:30.435 +05:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16531 B).
+2025-07-22 18:15:30.438 +05:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-07-22 18:15:30.743 +05:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-07-22 18:15:31.010 +05:00 [DBG] Connection id "0HNE947AOHJHC" received FIN.
+2025-07-22 18:15:31.011 +05:00 [DBG] Connection id "0HNE947AOHJHD" accepted.
+2025-07-22 18:15:31.012 +05:00 [DBG] Connection id "0HNE947AOHJHD" received FIN.
+2025-07-22 18:15:31.015 +05:00 [DBG] Connection id "0HNE947AOHJHC" accepted.
+2025-07-22 18:15:31.015 +05:00 [DBG] Connection id "0HNE947AOHJHD" started.
+2025-07-22 18:15:31.016 +05:00 [DBG] Connection id "0HNE947AOHJHC" started.
+2025-07-22 18:15:31.087 +05:00 [INF] Now listening on: https://localhost:7035
+2025-07-22 18:15:31.087 +05:00 [INF] Now listening on: http://localhost:5262
+2025-07-22 18:15:31.087 +05:00 [DBG] Loaded hosting startup assembly AutoAnnouncement.Server
+2025-07-22 18:15:31.087 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-07-22 18:15:31.087 +05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-07-22 18:15:31.087 +05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-07-22 18:15:31.122 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-07-22 18:15:31.122 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2025-07-22 18:15:31.151 +05:00 [DBG] Connection id "0HNE947AOHJHD" stopped.
+2025-07-22 18:15:31.151 +05:00 [DBG] Connection id "0HNE947AOHJHC" stopped.
+2025-07-22 18:15:31.158 +05:00 [DBG] Connection id "0HNE947AOHJHD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 18:15:31.160 +05:00 [DBG] Connection id "0HNE947AOHJHC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-22 18:15:31.310 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-22 18:15:31.310 +05:00 [INF] Hosting environment: Development
+2025-07-22 18:15:31.310 +05:00 [INF] Content root path: D:\ExamProject_M8\AutoAnnouncement\src\AutoAnnouncement.Server
+2025-07-22 18:15:31.310 +05:00 [DBG] Hosting started
+2025-07-22 18:15:32.493 +05:00 [DBG] Connection id "0HNE947AOHJHE" accepted.
+2025-07-22 18:15:32.513 +05:00 [DBG] Connection id "0HNE947AOHJHE" started.
+2025-07-22 18:15:32.673 +05:00 [DBG] Connection 0HNE947AOHJHE established using the following protocol: "Tls12"
+2025-07-22 18:15:32.877 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/index.html - null null
+2025-07-22 18:15:33.329 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-07-22 18:15:33.379 +05:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-07-22 18:15:33.393 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 18:15:33.613 +05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2025-07-22 18:15:33.618 +05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2025-07-22 18:15:33.706 +05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2025-07-22 18:15:33.708 +05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2025-07-22 18:15:33.721 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/index.html - 200 null text/html;charset=utf-8 873.6129ms
+2025-07-22 18:15:33.743 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-22 18:15:33.844 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/_vs/browserLink - null null
+2025-07-22 18:15:33.890 +05:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-07-22 18:15:33.892 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 149.6236ms
+2025-07-22 18:15:34.060 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/_vs/browserLink - 200 null text/javascript; charset=UTF-8 215.8927ms
+2025-07-22 18:15:34.194 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - null null
+2025-07-22 18:15:34.197 +05:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-07-22 18:15:34.197 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 18:15:34.375 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 181.3214ms
+2025-07-22 18:16:43.825 +05:00 [DBG] Connection id "0HNE947AOHJHF" accepted.
+2025-07-22 18:16:43.827 +05:00 [DBG] Connection id "0HNE947AOHJHF" started.
+2025-07-22 18:16:43.893 +05:00 [DBG] Connection 0HNE947AOHJHF established using the following protocol: "Tls12"
+2025-07-22 18:16:43.898 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - null null
+2025-07-22 18:16:43.915 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 18:16:43.915 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 18:16:43.938 +05:00 [DBG] OPTIONS requests are not supported
+2025-07-22 18:16:46.859 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:16:46.864 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:16:46.864 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:16:46.866 +05:00 [DBG] The request is a preflight request.
+2025-07-22 18:16:46.869 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/sign-up - 204 null null 2971.2582ms
+2025-07-22 18:16:46.873 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/sign-up - application/json 149
+2025-07-22 18:16:46.875 +05:00 [DBG] No candidates found for the request path '/api/auth/sign-up'
+2025-07-22 18:16:46.876 +05:00 [DBG] Request did not match any endpoints
+2025-07-22 18:16:46.876 +05:00 [DBG] POST requests are not supported
+2025-07-22 18:16:46.878 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:16:46.879 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:16:46.879 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:16:46.880 +05:00 [DBG] POST requests are not supported
+2025-07-22 18:16:46.883 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/sign-up - 404 0 null 9.7219ms
+2025-07-22 18:16:46.885 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7035/api/auth/sign-up, Response status code: 404
+2025-07-22 18:16:46.897 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:00000003": started reading request body.
+2025-07-22 18:16:46.897 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:00000003": done reading request body.
+2025-07-22 18:19:34.255 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/signUp - null null
+2025-07-22 18:19:34.320 +05:00 [DBG] 1 candidate(s) found for the request path '/api/auth/signUp'
+2025-07-22 18:19:34.321 +05:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-22 18:19:34.327 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:19:34.335 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:19:34.336 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:19:34.337 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:19:34.337 +05:00 [DBG] The request is a preflight request.
+2025-07-22 18:19:34.338 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/signUp - 204 null null 83.0676ms
+2025-07-22 18:19:34.345 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/signUp - application/json 153
+2025-07-22 18:19:34.345 +05:00 [DBG] 1 candidate(s) found for the request path '/api/auth/signUp'
+2025-07-22 18:19:34.365 +05:00 [DBG] Endpoint 'AutoAnnouncement.Server.Controllers.AuthController.SignUp (AutoAnnouncement.Server)' with route pattern 'api/auth/signUp' is valid for the request path '/api/auth/signUp'
+2025-07-22 18:19:34.366 +05:00 [DBG] Request matched endpoint 'AutoAnnouncement.Server.Controllers.AuthController.SignUp (AutoAnnouncement.Server)'
+2025-07-22 18:19:34.367 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:19:34.368 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:19:34.369 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:19:34.369 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:19:34.370 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:19:34.373 +05:00 [INF] Executing endpoint 'AutoAnnouncement.Server.Controllers.AuthController.SignUp (AutoAnnouncement.Server)'
+2025-07-22 18:19:34.501 +05:00 [INF] Route matched with {action = "SignUp", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Int64] SignUp(AutoAnnouncement.Aplication.Dtos.UserCreateDto) on controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server).
+2025-07-22 18:19:34.504 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-22 18:19:34.505 +05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-22 18:19:34.506 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-22 18:19:34.506 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-07-22 18:19:34.507 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-22 18:19:34.515 +05:00 [DBG] Executing controller factory for controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server)
+2025-07-22 18:19:36.609 +05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-07-22 18:19:36.660 +05:00 [DBG] Executed controller factory for controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server)
+2025-07-22 18:19:36.689 +05:00 [DBG] Attempting to bind parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto' ...
+2025-07-22 18:19:36.693 +05:00 [DBG] Attempting to bind parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto' using the name '' in request data ...
+2025-07-22 18:19:36.696 +05:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-07-22 18:19:36.717 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:00000007": started reading request body.
+2025-07-22 18:19:36.717 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:00000007": done reading request body.
+2025-07-22 18:19:36.724 +05:00 [DBG] JSON input formatter succeeded, deserializing to type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto'
+2025-07-22 18:19:36.725 +05:00 [DBG] Done attempting to bind parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto'.
+2025-07-22 18:19:36.725 +05:00 [DBG] Done attempting to bind parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto'.
+2025-07-22 18:19:36.726 +05:00 [DBG] Attempting to validate the bound parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto' ...
+2025-07-22 18:19:36.743 +05:00 [DBG] Done attempting to validate the bound parameter 'userCreateDto' of type 'AutoAnnouncement.Aplication.Dtos.UserCreateDto'.
+2025-07-22 18:19:51.906 +05:00 [DBG] The property 'Photo.AnnouncementId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-07-22 18:19:51.996 +05:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Announcement'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-22 18:19:52.252 +05:00 [DBG] Entity Framework Core 9.0.7 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.7' with options: EngineType=SqlServer 
+2025-07-22 18:19:52.377 +05:00 [DBG] 'MsSqlDbContext' generated a temporary value for the property 'User.UserId'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-22 18:19:52.574 +05:00 [DBG] Context 'MsSqlDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-22 18:19:52.584 +05:00 [DBG] SaveChanges starting for 'MsSqlDbContext'.
+2025-07-22 18:19:52.591 +05:00 [DBG] DetectChanges starting for 'MsSqlDbContext'.
+2025-07-22 18:19:52.620 +05:00 [DBG] DetectChanges completed for 'MsSqlDbContext'.
+2025-07-22 18:19:52.982 +05:00 [DBG] Creating DbConnection.
+2025-07-22 18:19:52.995 +05:00 [DBG] Created DbConnection. (5ms).
+2025-07-22 18:19:53.001 +05:00 [DBG] Opening connection to database 'AutoAnnouncement' on server 'DESKTOP-40PGLKA'.
+2025-07-22 18:19:53.030 +05:00 [DBG] Opened connection to database 'AutoAnnouncement' on server 'DESKTOP-40PGLKA'.
+2025-07-22 18:19:53.058 +05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-22 18:19:53.078 +05:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2025-07-22 18:19:53.098 +05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (40ms).
+2025-07-22 18:19:53.125 +05:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 4000), @p4='?' (Size = 20), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [FirstName], [LastName], [Password], [PhoneNumber], [Role], [Salt], [UserName])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-07-22 18:19:53.248 +05:00 [INF] Executed DbCommand (134ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 4000), @p4='?' (Size = 20), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [FirstName], [LastName], [Password], [PhoneNumber], [Role], [Salt], [UserName])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-07-22 18:19:53.287 +05:00 [DBG] The foreign key property 'User.UserId' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-07-22 18:19:53.324 +05:00 [DBG] Closing data reader to 'AutoAnnouncement' on server 'DESKTOP-40PGLKA'.
+2025-07-22 18:19:53.344 +05:00 [DBG] A data reader for 'AutoAnnouncement' on server 'DESKTOP-40PGLKA' is being disposed after spending 80ms reading results.
+2025-07-22 18:19:53.355 +05:00 [DBG] Closing connection to database 'AutoAnnouncement' on server 'DESKTOP-40PGLKA'.
+2025-07-22 18:19:53.359 +05:00 [DBG] Closed connection to database 'AutoAnnouncement' on server 'DESKTOP-40PGLKA' (3ms).
+2025-07-22 18:19:53.393 +05:00 [DBG] An entity of type 'User' tracked by 'MsSqlDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-22 18:19:53.401 +05:00 [DBG] SaveChanges completed for 'MsSqlDbContext' with 1 entities written to the database.
+2025-07-22 18:19:53.426 +05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-22 18:19:53.433 +05:00 [DBG] No information found on request to perform content negotiation.
+2025-07-22 18:19:53.433 +05:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-22 18:19:53.433 +05:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-22 18:19:53.441 +05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-22 18:19:53.442 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Int64'.
+2025-07-22 18:19:53.469 +05:00 [INF] Executed action AutoAnnouncement.Server.Controllers.AuthController.SignUp (AutoAnnouncement.Server) in 18954.7101ms
+2025-07-22 18:19:53.471 +05:00 [INF] Executed endpoint 'AutoAnnouncement.Server.Controllers.AuthController.SignUp (AutoAnnouncement.Server)'
+2025-07-22 18:19:53.483 +05:00 [DBG] 'MsSqlDbContext' disposed.
+2025-07-22 18:19:53.493 +05:00 [DBG] Disposing connection to database 'AutoAnnouncement' on server 'DESKTOP-40PGLKA'.
+2025-07-22 18:19:53.500 +05:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2025-07-22 18:19:53.501 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/signUp - 200 null application/json; charset=utf-8 19157.4719ms
+2025-07-22 18:20:05.460 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/auth/login - null null
+2025-07-22 18:20:05.461 +05:00 [DBG] 1 candidate(s) found for the request path '/api/auth/login'
+2025-07-22 18:20:05.461 +05:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-22 18:20:05.462 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:20:05.463 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:20:05.464 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:20:05.464 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:20:05.464 +05:00 [DBG] The request is a preflight request.
+2025-07-22 18:20:05.475 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/auth/login - 204 null null 16.3669ms
+2025-07-22 18:20:05.482 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7035/api/auth/login - application/json 45
+2025-07-22 18:20:05.487 +05:00 [DBG] 1 candidate(s) found for the request path '/api/auth/login'
+2025-07-22 18:20:05.489 +05:00 [DBG] Endpoint 'AutoAnnouncement.Server.Controllers.AuthController.Login (AutoAnnouncement.Server)' with route pattern 'api/auth/login' is valid for the request path '/api/auth/login'
+2025-07-22 18:20:05.490 +05:00 [DBG] Request matched endpoint 'AutoAnnouncement.Server.Controllers.AuthController.Login (AutoAnnouncement.Server)'
+2025-07-22 18:20:05.491 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:20:05.493 +05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-22 18:20:05.494 +05:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-22 18:20:05.494 +05:00 [INF] CORS policy execution successful.
+2025-07-22 18:20:05.494 +05:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-22 18:20:05.495 +05:00 [INF] Executing endpoint 'AutoAnnouncement.Server.Controllers.AuthController.Login (AutoAnnouncement.Server)'
+2025-07-22 18:20:05.524 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AutoAnnouncement.Aplication.Dtos.LoginResponseDto] Login(AutoAnnouncement.Aplication.Dtos.UserLoginDto) on controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server).
+2025-07-22 18:20:05.524 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-22 18:20:05.525 +05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-22 18:20:05.525 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-22 18:20:05.525 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2025-07-22 18:20:05.526 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-22 18:20:05.526 +05:00 [DBG] Executing controller factory for controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server)
+2025-07-22 18:20:05.530 +05:00 [DBG] Executed controller factory for controller AutoAnnouncement.Server.Controllers.AuthController (AutoAnnouncement.Server)
+2025-07-22 18:20:05.531 +05:00 [DBG] Attempting to bind parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto' ...
+2025-07-22 18:20:05.532 +05:00 [DBG] Attempting to bind parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto' using the name '' in request data ...
+2025-07-22 18:20:05.533 +05:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-07-22 18:20:05.537 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:0000000B": started reading request body.
+2025-07-22 18:20:05.537 +05:00 [DBG] Connection id "0HNE947AOHJHF", Request id "0HNE947AOHJHF:0000000B": done reading request body.
+2025-07-22 18:20:05.539 +05:00 [DBG] JSON input formatter succeeded, deserializing to type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto'
+2025-07-22 18:20:05.539 +05:00 [DBG] Done attempting to bind parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto'.
+2025-07-22 18:20:05.540 +05:00 [DBG] Done attempting to bind parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto'.
+2025-07-22 18:20:05.540 +05:00 [DBG] Attempting to validate the bound parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto' ...
+2025-07-22 18:20:05.543 +05:00 [DBG] Done attempting to validate the bound parameter 'userLoginDto' of type 'AutoAnnouncement.Aplication.Dtos.UserLoginDto'.
+2025-07-22 18:20:05.545 +05:00 [DBG] The request has model state errors, returning an error response.
+2025-07-22 18:20:05.548 +05:00 [DBG] Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'.
+2025-07-22 18:20:05.549 +05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-22 18:20:05.549 +05:00 [DBG] No information found on request to perform content negotiation.
+2025-07-22 18:20:05.553 +05:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml","application/problem+json","application/problem+xml"]'.
+2025-07-22 18:20:05.554 +05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2025-07-22 18:20:05.555 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-07-22 18:20:05.621 +05:00 [INF] Executed action AutoAnnouncement.Server.Controllers.AuthController.Login (AutoAnnouncement.Server) in 95.2992ms
+2025-07-22 18:20:05.622 +05:00 [INF] Executed endpoint 'AutoAnnouncement.Server.Controllers.AuthController.Login (AutoAnnouncement.Server)'
+2025-07-22 18:20:05.622 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7035/api/auth/login - 400 null application/problem+json; charset=utf-8 140.892ms

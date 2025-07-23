@@ -1,24 +1,34 @@
-<!-- <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <div class="card shadow-lg">
-        <div class="card-header bg-success text-white text-center">
-          <h4>Login</h4>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="form" (ngSubmit)="login()">
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input class="form-control" formControlName="userName" placeholder="Enter username" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input class="form-control" type="password" formControlName="password" placeholder="Enter password" />
-            </div>
-            <button type="submit" class="btn btn-success w-100">Login</button>
-          </form>
-        </div>
+<div class="login-container">
+  <form (ngSubmit)="login()" class="login-form">
+    <h2>Welcome Back 👋</h2>
+
+    <div class="input-group">
+      <label for="userName">Username</label>
+      <input
+        type="text"
+        id="userName"
+        formControlName="userName"
+        placeholder="Enter your username"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input
+          [type]="hidePassword ? 'password' : 'text'"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <span class="toggle" (click)="hidePassword = !hidePassword">
+          {{ hidePassword ? '👁️' : '🚫' }}
+        </span>
       </div>
     </div>
-  </div>
-</div> -->
+
+    <button [disabled]="form.invalid" class="login-btn" type="submit">
+      Login
+    </button>
+  </form>
+</div>
