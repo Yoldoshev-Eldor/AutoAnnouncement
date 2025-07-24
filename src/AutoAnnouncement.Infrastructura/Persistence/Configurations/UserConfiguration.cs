@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AutoAnnouncement.Infrastructure.Persistence.Configurations.MsSql;
+namespace AutoAnnouncement.Infrastructure.Persistence.EntityConfigurations;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
@@ -22,19 +22,30 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.UserName)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(100);
 
         builder.Property(u => u.Email)
             .IsRequired()
-            .HasMaxLength(100);
+            .HasMaxLength(150);
 
         builder.Property(u => u.Password)
             .IsRequired();
 
+        builder.Property(u => u.PhoneNumber)
+            .HasMaxLength(20);
+
         builder.Property(u => u.Salt)
             .IsRequired();
 
-        builder.Property(u => u.PhoneNumber)
-            .HasMaxLength(20);
+        builder.Property(u => u.Role)
+            .IsRequired();
+
+        builder.HasMany(u => u.RefreshTokens)
+            .WithOne(rt => rt.User)
+            .HasForeignKey(rt => rt.UserId);
+
+        builder.HasMany(u => u.Likes)
+            .WithOne(l => l.User)
+            .HasForeignKey(l => l.UserId);
     }
 }

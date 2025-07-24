@@ -1,13 +1,8 @@
 ﻿using AutoAnnouncement.Domain.Entities;
-using AutoAnnouncement.Infrastructure.Persistence.Configurations.MsSql;
+using AutoAnnouncement.Infrastructure.Persistence.Configurations;
 using AutoAnnouncement.Infrastructure.Persistence.Configurations.Postgres;
+using AutoAnnouncement.Infrastructure.Persistence.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoAnnouncement.Infrastructura.Persistence;
 

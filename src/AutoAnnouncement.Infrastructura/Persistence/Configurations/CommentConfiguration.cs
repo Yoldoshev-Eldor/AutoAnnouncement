@@ -2,30 +2,31 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AutoAnnouncement.Infrastructure.Persistence.Configurations.Postgres;
+namespace AutoAnnouncement.Infrastructure.Persistence.Configurations;
 
 public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 {
     public void Configure(EntityTypeBuilder<Comment> builder)
     {
+        builder.ToTable("Comments");
+
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.UserId).IsRequired();
-        builder.Property(c => c.AnnouncementId).IsRequired();
         builder.Property(c => c.Text)
-               .IsRequired()
-               .HasMaxLength(500);
+            .IsRequired()
+            .HasMaxLength(1000);
 
-        builder.Property(c => c.CreatedAt).IsRequired();
+        builder.Property(c => c.CreatedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
 
-        builder.HasOne<Announcement>()
-               .WithMany(a => a.Comments)
-               .HasForeignKey(c => c.AnnouncementId)
-               .OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(c => c.Announcement)
+            .WithMany(a => a.Comments)
+            .HasForeignKey(c => c.AnnouncementId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasOne<User>()
-               .WithMany()
-               .HasForeignKey(c => c.UserId)
-               .OnDelete(DeleteBehavior.NoAction);
+        builder.HasOne(c => c.User)
+            .WithMany(u => u.Comments)
+            .HasForeignKey(c => c.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

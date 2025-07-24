@@ -12,9 +12,14 @@ public class PhotoConfiguration : IEntityTypeConfiguration<Photo>
 
         builder.Property(p => p.Url)
                .IsRequired()
-               .HasMaxLength(200);
+               .HasMaxLength(500);
 
-        // Foreign key - AnnouncementId bo‘ladi, lekin navigation yo‘q
-        builder.Property<long>("AnnouncementId");
+        builder.Property(p => p.AnnouncementId)
+               .IsRequired();
+
+        builder.HasOne(p => p.Announcement)
+               .WithMany(a => a.Photos)
+               .HasForeignKey(p => p.AnnouncementId)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }
