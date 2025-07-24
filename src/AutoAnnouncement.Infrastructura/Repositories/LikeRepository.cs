@@ -7,9 +7,9 @@ namespace AutoAnnouncement.Infrastructura.Repositories;
 
 public class LikeRepository : ILikeRepository
 {
-    private readonly PostgresDbContext _context;
+    private readonly MsSqlDbContext _context;
 
-    public LikeRepository(PostgresDbContext context)
+    public LikeRepository(MsSqlDbContext context)
     {
         _context = context;
     }

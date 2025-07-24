@@ -12,3 +12,4 @@ public class Like
 
     public DateTime LikedAt { get; set; } = DateTime.UtcNow;
 }
+ 

@@ -7,9 +7,9 @@ namespace AutoAnnouncement.Infrastructura.Repositories;
 
 public class CommentRepository : ICommentRepository
 {
-    private readonly PostgresDbContext _context;
+    private readonly MsSqlDbContext _context;
 
-    public CommentRepository(PostgresDbContext context)
+    public CommentRepository(MsSqlDbContext context)
     {
         _context = context;
     }
@@ -23,7 +23,7 @@ public class CommentRepository : ICommentRepository
 
     public async Task DeleteAsync(long id)
     {
-        var comment = await _context.Comments.FindAsync(id);
+        var comment = await GetByIdAsync(id);
         if (comment != null)
         {
             _context.Comments.Remove(comment);
@@ -45,7 +45,7 @@ public class CommentRepository : ICommentRepository
             .ToListAsync();
     }
 
-    public async Task<Comment?> GetByIdAsync(long id)
+    public async Task<Comment> GetByIdAsync(long id)
     {
         return await _context.Comments.FindAsync(id);
     }

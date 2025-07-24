@@ -12,11 +12,5 @@ public static class DatabaseConfigurations
 
         builder.Services.AddDbContext<MsSqlDbContext>(options =>
           options.UseSqlServer(connectionString));
-
-        var connectionStringPS = builder.Configuration.GetConnectionString("PostgreSql");
-
-        builder.Services.AddDbContext<PostgresDbContext>(options =>
-            options.UseNpgsql(connectionStringPS
-            ));
     }
 }
