@@ -1,7 +1,9 @@
 ﻿using AutoAnnouncement.Aplication.Dtos;
 using AutoAnnouncement.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace AutoAnnouncement.Server.Controllers
 {
@@ -17,9 +19,19 @@ namespace AutoAnnouncement.Server.Controllers
         }
 
         [HttpPost("add")]
+        [Authorize] // Token kerak bo'lishi uchun
         public async Task<IActionResult> AddAsync([FromForm] AnnouncementCreateDto dto)
         {
-            var announcementId = await _announcementService.AddAsync(dto);
+            // JWT token ichidan UserId ni olish
+            var userIdClaim = HttpContext.User.FindFirst("UserId");
+            if (userIdClaim == null)
+                return Unauthorized(new { message = "UserId not found in token" });
+
+            if (!long.TryParse(userIdClaim.Value, out long userId))
+                return BadRequest(new { message = "Invalid UserId in token" });
+
+            // Servicega userId ni uzatish
+            var announcementId = await _announcementService.AddAsync(dto, userId);
             return Ok(new { Id = announcementId });
         }
 

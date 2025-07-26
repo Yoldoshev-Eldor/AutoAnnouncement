@@ -1,6 +1,7 @@
 
 using AutoAnnouncement.Server.Configurations;
 using AutoAnnouncement.Server.EndPoints;
+using AutoAnnouncement.Server.Extensions;
 
 namespace AutoAnnouncement.Server
 {
@@ -11,6 +12,7 @@ namespace AutoAnnouncement.Server
             var builder = WebApplication.CreateBuilder(args);
 
             builder.ConfigureSerilog();
+            ServiceCollectionExtensions2.AddSwaggerWithJwt(builder.Services);
 
 
             // Add services to the container.

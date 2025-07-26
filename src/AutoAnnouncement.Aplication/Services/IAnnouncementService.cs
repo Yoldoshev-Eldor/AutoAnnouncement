@@ -4,7 +4,7 @@ namespace AutoAnnouncement.Application.Services.Interfaces;
 
 public interface IAnnouncementService
 {
-    Task<long> AddAsync(AnnouncementCreateDto dto);
+    Task<long> AddAsync(AnnouncementCreateDto dto,long userId);
     Task UpdateAsync(AnnouncementUpdateDto dto);
     Task DeleteAsync(long id);
     Task<AnnouncementGetDto> GetByIdAsync(long id);

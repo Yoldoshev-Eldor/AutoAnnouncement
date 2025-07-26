@@ -21,7 +21,7 @@ public class AnnouncementService : IAnnouncementService
         _env = env;
     }
 
-    public async Task<long> AddAsync(AnnouncementCreateDto dto)
+    public async Task<long> AddAsync(AnnouncementCreateDto dto,long userId)
     {
         // 1. DTO dan Entity yasash
         var announcement = new Announcement
@@ -29,7 +29,7 @@ public class AnnouncementService : IAnnouncementService
             Title = dto.Title,
             Price = dto.Price,
             Description = dto.Description,
-            UserId = dto.UserId,
+            UserId = userId,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow,
             Photos = new List<Photo>() // bo‘sh list, keyin to‘ldiramiz
@@ -115,7 +115,32 @@ public class AnnouncementService : IAnnouncementService
     }
 
 
-    public async Task<List<AnnouncementGetDto>> GetAllAsync()
+    //public async Task<List<AnnouncementGetDto>> GetAllAsync()
+    //{
+    //    var announcements = await _announcementRepository.GetAllAsync();
+    //    var result = new List<AnnouncementGetDto>();
+
+    //    foreach (var a in announcements)
+    //    {
+    //        var photos = await _photoService.GetByAnnouncementIdAsync(a.Id);
+
+    //        result.Add(new AnnouncementGetDto
+    //        {
+    //            Id = a.Id,
+    //            Title = a.Title,
+    //            Price = a.Price,
+    //            Description = a.Description,
+    //            CreatedAt = a.CreatedAt,
+    //            UpdatedAt = a.UpdatedAt,
+    //            UserId = a.UserId,
+    //            PhotoPaths = photos.Select(p => p.Url).ToList()
+    //        });
+    //    }
+
+    //    return result;
+    //}
+
+    public async Task<IEnumerable<AnnouncementGetDto>> GetAllAsync()
     {
         var announcements = await _announcementRepository.GetAllAsync();
         var result = new List<AnnouncementGetDto>();
@@ -138,10 +163,5 @@ public class AnnouncementService : IAnnouncementService
         }
 
         return result;
-    }
-
-    Task<IEnumerable<AnnouncementGetDto>> IAnnouncementService.GetAllAsync()
-    {
-        throw new NotImplementedException();
     }
 }
