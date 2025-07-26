@@ -9,4 +9,8 @@ public interface IUserRepository
     Task<User> SelectUserByPhoneAsync(string phoneNumber);
     Task UpdateUserRoleAsync(long userId, UserRole userRole);
     Task DeleteUserByIdAsync(long userId);
+
+
+
+
 }
