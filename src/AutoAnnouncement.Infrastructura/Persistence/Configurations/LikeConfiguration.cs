@@ -10,28 +10,19 @@ public class LikeConfiguration : IEntityTypeConfiguration<Like>
     {
         builder.ToTable("Likes");
 
-        builder.HasKey(l => l.Id);
+        builder.HasKey(pl => new { pl.UserId, pl.AnnouncementId });
 
-        builder.Property(l => l.Id)
-               .ValueGeneratedOnAdd();
+        builder.Property(pl => pl.LikedAt)
+            .HasDefaultValueSql("GETUTCDATE()");
 
-        builder.Property(l => l.UserId)
-               .IsRequired();
+        builder.HasOne(pl => pl.User)
+            .WithMany(u => u.Likes)
+            .HasForeignKey(pl => pl.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Property(l => l.AnnouncementId)
-               .IsRequired();
-
-        builder.Property(l => l.LikedAt)
-               .IsRequired();
-
-        builder.HasOne(l => l.Announcement)
-               .WithMany(a => a.Likes)
-               .HasForeignKey(l => l.AnnouncementId)
-               .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasOne(l => l.User)
-               .WithMany(u => u.Likes) // Agar `User`da `ICollection<Like> Likes` bo‘lsa
-               .HasForeignKey(l => l.UserId)
-               .OnDelete(DeleteBehavior.NoAction); // yoki .Restrict() — sizga qanday kerakligiga qarab
+        builder.HasOne(pl => pl.Announcement)
+            .WithMany(p => p.Likes)
+            .HasForeignKey(pl => pl.AnnouncementId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

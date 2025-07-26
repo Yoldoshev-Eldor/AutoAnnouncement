@@ -4,7 +4,7 @@ namespace AutoAnnouncement.Aplication.Interfaces;
 
 public interface IRefreshTokenRepository
 {
-    Task AddRefreshTokenAsync(RefreshToken refreshToken);
-    Task<RefreshToken> SelectRefreshTokenAsync(string refreshToken, long userId);
-    Task RemoveRefreshTokenAsync(string token);
+    Task AddRefreshToken(RefreshToken refreshToken);
+    Task<RefreshToken> SelectRefreshToken(string refreshToken, long userId);
+    Task DeleteRefreshToken(string refreshToken);
 }

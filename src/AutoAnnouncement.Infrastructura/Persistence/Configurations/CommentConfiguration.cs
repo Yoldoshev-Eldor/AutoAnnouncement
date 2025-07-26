@@ -14,19 +14,19 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 
         builder.Property(c => c.Text)
             .IsRequired()
-            .HasMaxLength(1000);
+            .HasMaxLength(500);
 
         builder.Property(c => c.CreatedAt)
             .HasDefaultValueSql("GETUTCDATE()");
-
-        builder.HasOne(c => c.Announcement)
-            .WithMany(a => a.Comments)
-            .HasForeignKey(c => c.AnnouncementId)
-            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(c => c.User)
             .WithMany(u => u.Comments)
             .HasForeignKey(c => c.UserId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(c => c.Announcement)
+            .WithMany(p => p.Comments)
+            .HasForeignKey(c => c.AnnouncementId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

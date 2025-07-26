@@ -7,5 +7,7 @@ public interface IAuthService
     Task<long> SignUpUserAsync(UserCreateDto userCreateDto);
     Task<LoginResponseDto> LoginUserAsync(UserLoginDto userLoginDto);
     Task<LoginResponseDto> RefreshTokenAsync(RefreshRequestDto request);
-    Task LogOutAsync(string token);
+    Task LogOut(string token);
+    Task EailCodeSender(string email);
+    Task<bool> ConfirmCode(string userCode, string email);
 }

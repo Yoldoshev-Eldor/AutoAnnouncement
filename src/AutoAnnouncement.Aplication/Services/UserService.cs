@@ -1,41 +1,32 @@
 ﻿using AutoAnnouncement.Aplication.Dtos;
 using AutoAnnouncement.Aplication.Interfaces;
 using AutoAnnouncement.Domain.Entities;
+using Pinterest.Core.Errors;
 
 namespace AutoAnnouncement.Aplication.Services;
 
-public class UserService : IUserService
+public class UserService(IUserRepository _userRepository) : IUserService
 {
-    private readonly IUserRepository UserRepository;
-
-
-    public UserService(IUserRepository userRepository)
-    {
-        UserRepository = userRepository;
-    }
-
     public async Task DeleteUserByIdAsync(long userId, string userRole)
     {
         if (userRole == "SuperAdmin")
         {
-            await UserRepository.DeleteUserByIdAsync(userId);
+            await _userRepository.DeleteUserByIdAsync(userId);
         }
         else if (userRole == "Admin")
         {
-            var user = await UserRepository.SelectUserByIdAsync(userId);
-            if (user.Role == UserRole.User)
+            var user = await _userRepository.GetUserByIdAync(userId);
+            if (user.Role.Name == "User")
             {
-                await UserRepository.DeleteUserByIdAsync(userId);
+                await _userRepository.DeleteUserByIdAsync(userId);
             }
             else
             {
-                throw new Exception("Admin can not delete Admin or SuperAdmin");
+                throw new NotAllowedException("Admin can not delete Admin or SuperAdmin");
             }
         }
     }
 
-    public async Task UpdateUserRoleAsync(long userId, UserRoleGetDto userRoleDto)
-    {
-        await UserRepository.UpdateUserRoleAsync(userId, (UserRole)userRoleDto);
-    }
+    public async Task UpdateUserRoleAsync(long userId, string userRole) => await _userRepository.UpdateUserRoleAsync(userId, userRole);
 }
+

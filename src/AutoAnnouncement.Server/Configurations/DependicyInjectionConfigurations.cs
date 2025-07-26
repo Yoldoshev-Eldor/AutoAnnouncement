@@ -25,6 +25,8 @@ public static class DependicyInjectionConfigurations
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IAuthService, AuthService>();
+        builder.Services.AddScoped<IRoleService, RoleService>();
+        builder.Services.AddScoped<IRoleRepository, UserRoleRepository>();
         
 
         builder.Services.AddScoped<ITokenService, TokenService>();
@@ -34,8 +36,8 @@ public static class DependicyInjectionConfigurations
         builder.Services.AddScoped<ICommentService, CommentService>();
 
         builder.Services.AddScoped<IValidator<UserCreateDto>, UserCreateDtoValidator>();
-        builder.Services.AddScoped<IValidator<CommentUpdateDto>, CommentUpdateDtoValidator>();
-        builder.Services.AddScoped<IValidator<CommentCreateDto>, CommentCreateDtoValidator>();
+        builder.Services.AddScoped<IValidator<UserLoginDto>, UserLoginDtoValidator>();
+
 
 
 

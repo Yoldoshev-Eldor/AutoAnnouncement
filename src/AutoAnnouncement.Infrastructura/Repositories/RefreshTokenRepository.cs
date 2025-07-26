@@ -2,6 +2,7 @@
 using AutoAnnouncement.Domain.Entities;
 using AutoAnnouncement.Infrastructura.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Pinterest.Core.Errors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,37 +11,23 @@ using System.Threading.Tasks;
 
 namespace AutoAnnouncement.Infrastructura.Repositories;
 
-public class RefreshTokenRepository : IRefreshTokenRepository
+public class RefreshTokenRepository(MsSqlDbContext _context) : IRefreshTokenRepository
 {
-
-    private readonly MsSqlDbContext MsSqlDbContext;
-
-    public RefreshTokenRepository(MsSqlDbContext mainDbContext)
+    public async Task AddRefreshToken(RefreshToken refreshToken)
     {
-        MsSqlDbContext = mainDbContext;
+        await _context.RefreshTokens.AddAsync(refreshToken);
+        await _context.SaveChangesAsync();
     }
 
-    public async Task AddRefreshTokenAsync(RefreshToken refreshToken)
+    public async Task DeleteRefreshToken(string refreshToken)
     {
-        await MsSqlDbContext.RefreshTokens.AddAsync(refreshToken);
-        await MsSqlDbContext.SaveChangesAsync();
-    }
-
-    public async Task RemoveRefreshTokenAsync(string token)
-    {
-        var rToken = await MsSqlDbContext.RefreshTokens.FirstOrDefaultAsync(t => t.Token == token);
-
-        if (rToken == null)
+        var token = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.Token == refreshToken);
+        if (token == null)
         {
-            throw new Exception($"Refresh token {token} not found");
+            throw new EntityNotFoundException();
         }
-
-        MsSqlDbContext.RefreshTokens.Remove(rToken);
-        await MsSqlDbContext.SaveChangesAsync();
+        _context.RefreshTokens.Remove(token);
     }
 
-    public async Task<RefreshToken> SelectRefreshTokenAsync(string refreshToken, long userId)
-    {
-        return await MsSqlDbContext.RefreshTokens.FirstOrDefaultAsync(rt => rt.Token == refreshToken && rt.UserId == userId);
-    }
+    public async Task<RefreshToken> SelectRefreshToken(string refreshToken, long userId) => await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.Token == refreshToken && rt.UserId == userId);
 }

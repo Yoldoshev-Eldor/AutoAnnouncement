@@ -4,84 +4,57 @@ using AutoAnnouncement.Aplication.Validators;
 using AutoAnnouncement.Domain.Entities;
 using FluentValidation;
 using FluentValidation.Results;
+using Pinterest.Core.Errors;
 
 namespace AutoAnnouncement.Aplication.Services;
 
-public class CommentService : ICommentService
+public class CommentService(ICommentRepository _repo) : ICommentService
 {
-    private readonly ICommentRepository _commentRepository;
-
-    public CommentService(ICommentRepository commentRepository)
+    public async Task AddAsync(CommentCreateDto comment, long userId)
     {
-        _commentRepository = commentRepository;
-
-    }
-
-    public async Task<long> CreateAsync(CommentCreateDto dto)
-    {
-        var validator = new CommentCreateDtoValidator();
-        ValidationResult result = await validator.ValidateAsync(dto);
-        if (!result.IsValid)
-            throw new ValidationException(result.Errors);
-
-        var comment = new Comment
+        var commentEntity = new Comment
         {
-            Text = dto.Text,
-            AnnouncementId = dto.AnnouncementId,
-            UserId = dto.UserId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.Now,
+            AnnouncementId = comment.AnnouncementId,
+            UserId = userId,
+            Text = comment.Text,
         };
-
-        await _commentRepository.AddAsync(comment);
-        return comment.Id;
+        await _repo.AddAsync(commentEntity);
     }
 
-    public async Task DeleteAsync(long id)
+    public async Task DeleteAsync(long commentId, long userId)
     {
-        await _commentRepository.DeleteAsync(id);
-
-    }
-
-    public async Task<IEnumerable<CommentGetDto>> GetAllByAnnouncementIdAsync(long announcementId)
-    {
-        var comments = await _commentRepository.GetByAnnouncementIdAsync(announcementId);
-        return comments.Select(c => new CommentGetDto
+        var comment = await _repo.GetByIdAsync(commentId);
+        if (comment.UserId == userId || comment.Announcement.UserId == userId)
         {
-            Id = c.Id,
-            Text = c.Text,
-            CreatedAt = c.CreatedAt,
-            UserId = c.UserId,
-            AnnouncementId = c.AnnouncementId
-        });
+            await _repo.DeleteAsync(comment);
+            return;
+        }
+
+        throw new NotAllowedException();
     }
 
-    public async Task<CommentGetDto> GetByIdAsync(long id)
+    public async Task<List<CommentDto>> GetAllByPinIdAsync(long pinId)
     {
-        var comment = await _commentRepository.GetByIdAsync(id)
-            ?? throw new Exception("Comment not found");
+        var comments = await _repo.GetAllByPinIdAsync(pinId);
+        return comments.Select(Converter).ToList();
+    }
 
-        return new CommentGetDto
+    public async Task<CommentDto> GetByIdAsync(long id)
+    {
+        return Converter(await _repo.GetByIdAsync(id));
+    }
+
+    private CommentDto Converter(Comment comment)
+    {
+        return new CommentDto
         {
+            CreatedAt = comment.CreatedAt,
+            AnnouncementId = comment.AnnouncementId,
             Id = comment.Id,
             Text = comment.Text,
-            CreatedAt = comment.CreatedAt,
-            UserId = comment.UserId,
-            AnnouncementId = comment.AnnouncementId
+            UserName = comment.User.UserName,
         };
     }
 
-    public async Task UpdateAsync(CommentUpdateDto dto)
-    {
-        var validator = new CommentUpdateDtoValidator();
-        ValidationResult result = await validator.ValidateAsync(dto);
-        if (!result.IsValid)
-            throw new ValidationException(result.Errors);
-
-        var comment = await _commentRepository.GetByIdAsync(dto.Id)
-            ?? throw new Exception("Comment not found");
-
-        comment.Text = dto.Text;
-
-        await _commentRepository.UpdateAsync(comment);
-    }
 }

@@ -1,10 +1,6 @@
 ﻿using AutoAnnouncement.DataAccess.Repositories.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 
 public class PhotoService : IPhotoService
 {
@@ -113,6 +109,6 @@ public class PhotoService : IPhotoService
         if (File.Exists(filePath)) File.Delete(filePath);
 
         await _photoRepository.DeleteAsync(photo.Id);
-    
+
     }
 }

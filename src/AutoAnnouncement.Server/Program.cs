@@ -1,5 +1,6 @@
 
 using AutoAnnouncement.Server.Configurations;
+using AutoAnnouncement.Server.EndPoints;
 
 namespace AutoAnnouncement.Server
 {
@@ -19,6 +20,7 @@ namespace AutoAnnouncement.Server
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Configure();
+            builder.ConfigureJwtSettings();
             builder.Configuration();
             builder.ConfigurationJwtAuth();
             builder.Services.AddCors(options =>
@@ -61,6 +63,11 @@ namespace AutoAnnouncement.Server
             .WithName("HelloEndpoint")
             .WithTags("Custom Section");
 
+            app.MapAuthEndpoints();
+            app.MapRoleEndpoints();
+            app.MapAdminEndpoints();
+            app.MapCommentEndpoints();
+            app.MapLikeEndpoints();
 
             app.MapControllers();
 

@@ -1,7 +1,10 @@
 ﻿namespace AutoAnnouncement.Domain.Entities;
 
-public enum UserRole
+public class UserRole
 {
-    User = 0,
-    Admin = 1,
+    public long Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+
+    public ICollection<User> Users { get; set; }
 }

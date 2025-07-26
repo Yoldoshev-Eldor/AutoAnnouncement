@@ -2,57 +2,39 @@
 using AutoAnnouncement.Domain.Entities;
 using AutoAnnouncement.Infrastructura.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Pinterest.Core.Errors;
+using System;
 
 namespace AutoAnnouncement.Infrastructura.Repositories;
 
-public class CommentRepository : ICommentRepository
+public class CommentRepository(MsSqlDbContext _context) : ICommentRepository
 {
-    private readonly MsSqlDbContext _context;
-
-    public CommentRepository(MsSqlDbContext context)
-    {
-        _context = context;
-    }
-
-    public async Task<long> AddAsync(Comment comment)
+    public async Task AddAsync(Comment comment)
     {
         await _context.Comments.AddAsync(comment);
         await _context.SaveChangesAsync();
-        return comment.Id;
     }
 
-    public async Task DeleteAsync(long id)
+    public async Task DeleteAsync(Comment comment)
     {
-        var comment = await GetByIdAsync(id);
-        if (comment != null)
-        {
-            _context.Comments.Remove(comment);
-            await _context.SaveChangesAsync();
-        }
+        _context.Remove(comment);
+        await _context.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Comment>> GetAllAsync()
+    public async Task<List<Comment>> GetAllByPinIdAsync(long pinId)
     {
-        return await _context.Comments
-            .Include(c => c.Announcement) // Agar kerak bo‘lsa
-            .ToListAsync();
-    }
-
-    public async Task<IEnumerable<Comment>> GetByAnnouncementIdAsync(long announcementId)
-    {
-        return await _context.Comments
-            .Where(c => c.AnnouncementId == announcementId)
-            .ToListAsync();
+        return await _context.Comments.Include(x => x.User).ToListAsync();
     }
 
     public async Task<Comment> GetByIdAsync(long id)
     {
-        return await _context.Comments.FindAsync(id);
-    }
+        var comment = await _context.Comments.Include(x => x.User).FirstOrDefaultAsync(c => c.Id == id);
 
-    public async Task UpdateAsync(Comment comment)
-    {
-        _context.Comments.Update(comment);
-        await _context.SaveChangesAsync();
+        if (comment is null)
+        {
+            throw new EntityNotFoundException();
+        }
+        return comment;
     }
 }
+

@@ -4,9 +4,8 @@ namespace AutoAnnouncement.Aplication.Services;
 
 public interface ICommentService
 {
-    Task<long> CreateAsync(CommentCreateDto dto);
-    Task UpdateAsync(CommentUpdateDto dto);
-    Task DeleteAsync(long id);
-    Task<CommentGetDto> GetByIdAsync(long id);
-    Task<IEnumerable<CommentGetDto>> GetAllByAnnouncementIdAsync(long announcementId);
+    Task<CommentDto> GetByIdAsync(long id);
+    Task<List<CommentDto>> GetAllByPinIdAsync(long pinId);
+    Task AddAsync(CommentCreateDto comment, long userId);
+    Task DeleteAsync(long commentId, long userId);
 }

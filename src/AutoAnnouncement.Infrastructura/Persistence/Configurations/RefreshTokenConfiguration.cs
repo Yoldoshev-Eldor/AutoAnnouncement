@@ -15,21 +15,15 @@ public class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
     {
         builder.ToTable("RefreshTokens");
 
-        builder.HasKey(rt => rt.RefreshTokenId);
+        builder.HasKey(t => t.RefreshTokenId);
 
-        builder.Property(rt => rt.Token)
-            .IsRequired()
-            .HasMaxLength(256); // optional: token uzunligi cheklov
+        builder.Property(t => t.Token).IsRequired();
+        builder.Property(t => t.Expires).IsRequired();
+        builder.Property(t => t.IsRevoked).IsRequired();
 
-        builder.Property(rt => rt.Expires)
-            .IsRequired();
-
-        builder.Property(rt => rt.IsRevoked)
-            .IsRequired();
-
-        builder.HasOne(rt => rt.User)
-            .WithMany(u => u.RefreshTokens)
-            .HasForeignKey(rt => rt.UserId)
-            .OnDelete(DeleteBehavior.Cascade); // foydalanuvchi o‘chirilsa, tokenlar ham o‘chadi
+        builder.HasOne(t => t.User)
+               .WithMany(u => u.RefreshTokens)
+               .HasForeignKey(t => t.UserId)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -12,40 +12,22 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasKey(u => u.UserId);
 
-        builder.Property(u => u.FirstName)
-            .IsRequired()
-            .HasMaxLength(100);
+        builder.Property(u => u.FirstName).HasMaxLength(100).IsRequired();
+        builder.Property(u => u.LastName).HasMaxLength(100).IsRequired();
+        builder.Property(u => u.UserName).HasMaxLength(100).IsRequired();
+        builder.Property(u => u.Password).IsRequired();
+        builder.Property(u => u.Salt).IsRequired();
+        builder.Property(u => u.PhoneNumber).HasMaxLength(20);
+        builder.Property(u => u.ConfirmerId).IsRequired(false);
 
-        builder.Property(u => u.LastName)
-            .IsRequired()
-            .HasMaxLength(100);
+        builder.HasOne(u => u.Confirmer)
+            .WithOne(c => c.User)
+            .HasForeignKey<User>(u => u.ConfirmerId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        builder.Property(u => u.UserName)
-            .IsRequired()
-            .HasMaxLength(100);
-
-        builder.Property(u => u.Email)
-            .IsRequired()
-            .HasMaxLength(150);
-
-        builder.Property(u => u.Password)
-            .IsRequired();
-
-        builder.Property(u => u.PhoneNumber)
-            .HasMaxLength(20);
-
-        builder.Property(u => u.Salt)
-            .IsRequired();
-
-        builder.Property(u => u.Role)
-            .IsRequired();
-
-        builder.HasMany(u => u.RefreshTokens)
-            .WithOne(rt => rt.User)
-            .HasForeignKey(rt => rt.UserId);
-
-        builder.HasMany(u => u.Likes)
-            .WithOne(l => l.User)
-            .HasForeignKey(l => l.UserId);
+        builder.HasOne(u => u.Role)
+               .WithMany(r => r.Users)
+               .HasForeignKey(u => u.RoleId)
+               .OnDelete(DeleteBehavior.Restrict);
     }
 }

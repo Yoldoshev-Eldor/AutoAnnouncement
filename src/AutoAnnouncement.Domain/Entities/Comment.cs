@@ -1,15 +1,16 @@
-﻿namespace AutoAnnouncement.Domain.Entities;
+﻿using System.Net.NetworkInformation;
+
+namespace AutoAnnouncement.Domain.Entities;
 
 public class Comment
 {
     public long Id { get; set; }
-
-    public string Text { get; set; } = null!;
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-    public long AnnouncementId { get; set; }
-    public Announcement Announcement { get; set; } = null!;
+    public string Text { get; set; }
+    public DateTime CreatedAt { get; set; }
 
     public long UserId { get; set; }
-    public User User { get; set; } = null!;
+    public User User { get; set; }
+
+    public long AnnouncementId { get; set; }
+    public Announcement Announcement { get; set; }
 }

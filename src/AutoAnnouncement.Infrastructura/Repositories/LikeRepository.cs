@@ -2,55 +2,44 @@
 using AutoAnnouncement.Domain.Entities;
 using AutoAnnouncement.Infrastructura.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace AutoAnnouncement.Infrastructura.Repositories;
 
-public class LikeRepository : ILikeRepository
+public class LikeRepository(MsSqlDbContext _context) : ILikeRepository
 {
-    private readonly MsSqlDbContext _context;
-
-    public LikeRepository(MsSqlDbContext context)
+    public async Task<bool> HasUserLikedAsync(long userId, long pinId)
     {
-        _context = context;
+        return await _context.Likes
+            .AnyAsync(pl => pl.UserId == userId && pl.AnnouncementId == pinId);
     }
 
-    public async Task<long> AddAsync(Like like)
+    public async Task LikeAsync(long userId, long pinId)
     {
-        _context.Likes.Add(like);
-        await _context.SaveChangesAsync();
-        return like.Id; 
-    }
-
-    public async Task DeleteAsync(long id)
-    {
-        var like = await _context.Likes.FindAsync(id);
-        if (like is not null)
+        bool alreadyLiked = await HasUserLikedAsync(userId, pinId);
+        if (!alreadyLiked)
         {
-            _context.Likes.Remove(like);
+            var pinLike = new Like
+            {
+                UserId = userId,
+                AnnouncementId = pinId,
+                LikedAt = DateTime.UtcNow
+            };
+
+            _context.Likes.Add(pinLike);
             await _context.SaveChangesAsync();
         }
     }
 
-    public async Task<IEnumerable<Like>> GetAllAsync()
+    public async Task UnlikeAsync(long userId, long pinId)
     {
-        return await _context.Likes.ToListAsync();
-    }
+        var pinLike = await _context.Likes
+            .FirstOrDefaultAsync(pl => pl.UserId == userId && pl.AnnouncementId == pinId);
 
-    public async Task<IEnumerable<Like>> GetByAnnouncementIdAsync(long announcementId)
-    {
-        return await _context.Likes
-            .Where(l => l.AnnouncementId == announcementId)
-            .ToListAsync();
-    }
-
-    public async Task<Like> GetByIdAsync(long id)
-    {
-        return await _context.Likes.FindAsync(id);
-    }
-
-    public async Task UpdateAsync(Like like)
-    {
-        _context.Likes.Update(like);
-        await _context.SaveChangesAsync();
+        if (pinLike != null)
+        {
+            _context.Likes.Remove(pinLike);
+            await _context.SaveChangesAsync();
+        }
     }
 }

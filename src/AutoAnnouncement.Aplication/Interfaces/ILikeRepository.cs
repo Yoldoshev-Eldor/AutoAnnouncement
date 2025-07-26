@@ -4,10 +4,7 @@ namespace AutoAnnouncement.Aplication.Interfaces;
 
 public interface ILikeRepository
 {
-    Task<IEnumerable<Like>> GetAllAsync();
-    Task<Like?> GetByIdAsync(long id);
-    Task<IEnumerable<Like>> GetByAnnouncementIdAsync(long announcementId);
-    Task<long> AddAsync(Like like);
-    Task UpdateAsync(Like like);
-    Task DeleteAsync(long id);
+    Task<bool> HasUserLikedAsync(long userId, long pinId);
+    Task LikeAsync(long userId, long pinId);
+    Task UnlikeAsync(long userId, long pinId);
 }

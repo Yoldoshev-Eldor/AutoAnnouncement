@@ -2,7 +2,6 @@
 
 public class CommentCreateDto
 {
-    public string Text { get; set; } = null!;
+    public string Text { get; set; }
     public long AnnouncementId { get; set; }
-    public long UserId { get; set; }
 }

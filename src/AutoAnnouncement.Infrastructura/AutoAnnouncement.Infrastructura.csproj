@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AutoAnnouncement.Core\AutoAnnouncement.Core.csproj" />
     <ProjectReference Include="..\AutoAnnouncement.Aplication\AutoAnnouncement.Aplication.csproj" />
+    <ProjectReference Include="..\AutoAnnouncement.Domain\AutoAnnouncement.Domain.csproj" />
   </ItemGroup>
 
 </Project>
