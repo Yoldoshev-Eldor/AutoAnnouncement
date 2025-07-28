@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace AutoAnnouncement.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/announcement")]
     [ApiController]
     public class AnnouncementController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace AutoAnnouncement.Server.Controllers
             _announcementService = announcementService;
         }
 
-        [HttpPost("add")]
+        [HttpPost("add-announcement")]
         [Authorize] // Token kerak bo'lishi uchun
         public async Task<IActionResult> AddAsync([FromForm] AnnouncementCreateDto dto)
         {
@@ -42,7 +42,7 @@ namespace AutoAnnouncement.Server.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:long}")]
+        [HttpDelete("delete-announcement")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             await _announcementService.DeleteAsync(id);
@@ -59,7 +59,7 @@ namespace AutoAnnouncement.Server.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("get-all-announcement")]
         public async Task<IActionResult> GetAllAsync()
         {
             var result = await _announcementService.GetAllAsync();
